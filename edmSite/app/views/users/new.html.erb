@@ -1,0 +1,12 @@
+<%@title = "Register"%>
+<%= render :partial => "/layouts/errormessages", :locals => {:flashErrors => flash[:error]} %>
+<%= form_for(@user, :html=>{:multipart => true}, :url => {:action => :create}) do |form| %>
+	<span><%= label_tag(:firstname, "First name: ") %><%= form.text_field :first_name%> <%= label_tag(:lastname, "Last: ")%><%= form.text_field :last_name%></span>
+	<br><%= label_tag(:login, "Enter username: ") %>
+	<%= form.text_field :login%><br/>
+	<br><%= label_tag(:password1, "Enter password: ") %>
+	<%= form.password_field :password%></br>
+	<br><%= label_tag(:password2, "Re-enter password: ") %>
+	<%= form.password_field :password_confirmation%></br>
+	<%= form.submit "Submit"%>
+<% end %>
