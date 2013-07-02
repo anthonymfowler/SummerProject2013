@@ -12,6 +12,7 @@ gem 'sqlite3'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'bootstrap-sass', '~> 2.3.2.0'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -20,7 +21,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
+#using less rails bootstrap
+
+gem 'therubyracer'  # If using Ruby
 gem 'jquery-rails'
+gem 'less-rails-bootstrap'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

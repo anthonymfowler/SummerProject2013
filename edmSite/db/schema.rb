@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617031917) do
+ActiveRecord::Schema.define(:version => 20130702064102) do
+
+  create_table "artists", :force => true do |t|
+    t.string "name"
+    t.string "genre"
+  end
+
+  create_table "festivals", :force => true do |t|
+    t.string  "festival_name"
+    t.date    "start_date"
+    t.integer "duration"
+    t.string  "location"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "date_time"
+    t.string   "file_name"
+  end
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
