@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130702064102) do
 
   create_table "photos", :force => true do |t|
     t.integer  "user_id"
+    t.integer  "festival_id"
     t.datetime "date_time"
     t.string   "file_name"
   end

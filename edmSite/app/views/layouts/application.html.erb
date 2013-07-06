@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<div class = "offset1">
 <head>
   <title>
   	<% if @title then %>
@@ -14,6 +15,17 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">EDM</a>
+    <ul class="nav">
+      <li class="active"><a href="http://localhost:3000/homepage/home/">Home</a></li>
+      <li><a href="http://localhost:3000/festivals/home/">Festivals</a></li>
+       <li><a href="photos/home">Photos</a></li>
+        <li><a href="music/home">Music</a></li>
+    </ul>
+  </div>
+</div>
 <body>
 	<div class="header"></div>
 	<h1>YAY EDM!!!!</h1>
@@ -27,5 +39,5 @@
 	<div><%=flash[:notice]%></div>
 	<%= yield %>
 </body>
-
+</div>
 </html>

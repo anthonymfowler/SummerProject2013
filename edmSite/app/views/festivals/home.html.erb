@@ -1,0 +1,35 @@
+<div class = "offset1">
+
+<%= form_for(@newFestival, :html=>{:multipart => true}, :url => {:action => :createFestival}) do |form| %>
+	<%= label_tag(:festival_name, "Festival name: ") %><%= form.text_field :festival_name%>
+	<br><%= label_tag(:start_date, "Date:") %>
+	<%= form.text_field :start_date%><br/>
+	<br><%= label_tag(:duration, "Duration: ") %>
+	<%= form.text_field :duration%></br>
+	<br><%= label_tag(:location, "Location: ") %>
+	<%= form.text_field :location%></br>
+	<%= form.file_field :newPhoto%>
+	<%= form.submit "Submit"%>
+<% end %>
+
+
+
+<ul class="thumbnails">
+<% @festivals.each do |festival| %>
+	<li class="span4">
+		<div class "thumbnail">
+			<% if festival.photo != nil then %>
+				<img class = "pic" src="/images/<%= festival.photo.file_name %>" alt="<%= festival.photo.file_name%>"/>
+			<% else %>
+				<img class = "pic" src="/images/default.jpg" alt="default"/>
+
+			<% end %>
+			<div><%=festival.festival_name%></div>
+			<div><%=festival.start_date%></div>
+			<div><%=festival.location%></div>
+		</div>
+	</li>
+<%end%>
+</ul>
+
+</div>
