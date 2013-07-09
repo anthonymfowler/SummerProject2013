@@ -1,0 +1,35 @@
+<h3>Upload your photos</h3>
+<%= form_for(@newPhoto, :html=>{:multipart => true}, :url => {:action => :upload}) do |form| %>
+	<br><%= label_tag(:dateTime, "Time taken: ") %>
+	<%= form.text_field :date_time%>
+	
+	<br><%= form.collection_select :festival_id, Festival.all, :id, :festival_name %>
+	<br><%= form.file_field :newPhoto%> 
+	<br><%= form.submit "Submit"%>
+<% end %>
+
+
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+  	<% if @allPhotos != nil then %>
+  		<% @allPhotos.each do |photo| %>
+    		<div class="item"><img class = "carouselPics" src="/images/<%= photo.file_name %>" alt="<%= photo.file_name%>"/></div>
+    	<% end %>
+    <% end %>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+
+
+
+	
+
+

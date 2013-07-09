@@ -5,6 +5,10 @@ class FestivalsController < ApplicationController
 		@newFestival = Festival.new
 	end
 
+	def schedules
+		
+	end
+
 
 	def createFestival
 		@newFestival = Festival.new
@@ -19,7 +23,7 @@ class FestivalsController < ApplicationController
 	    		photo = Photo.new
 	    		photo.writePhotoData(uploaded_io)
 	    		photo.file_name = uploaded_io.original_filename
-	    		photo.date_time = DateTime.now
+	    		photo.date_time = Da
 	    		photo.save
 	    		@newFestival.photo = photo
 				redirect_to("/homepage/home")
@@ -28,6 +32,10 @@ class FestivalsController < ApplicationController
 				redirect_to("/users/home")
 			end
 		end
+	end
+
+	def attendedFestival
+
 	end
 	
 end
